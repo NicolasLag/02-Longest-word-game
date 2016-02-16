@@ -1,0 +1,15 @@
+<div class="banner" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://lorempixel.com/1000/500/sports');">
+  <div class="banner-content">
+    <h1>Welcome to the longest word-game </h1>
+    <p>Here is your grid :</p>
+    <p><%= @grid.join(" ") %></p>
+    <form action="<%= score_path %>" method="get">
+    <!-- OR WE CAN USE <form action="/score" > -->
+      <label for="question">What's your best shot ?</label>
+      <input type="text" id="question" name="attempt" placeholder="enter your best guess">
+      <input type="hidden" name="start_time" value="<% @start_time %>">
+      <input type="hidden" name="grid" value="<% @grid %>">
+      <input type="submit" value="Submit!" class="btn btn-primary btn-lg">
+    </form>
+  </div>
+</div>
